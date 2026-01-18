@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>借阅管理 - 智慧图书馆管理系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边导航栏 -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect x="4" y="4" width="24" height="24" rx="2" stroke="#4A90E2" stroke-width="2"/>
+                        <path d="M10 12V22" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M16 10V22" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 12V22" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>智慧图书馆</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                        首页概览
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="books.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        图书管理
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="borrowing.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="7" r="4"/>
+                            <line x1="20" y1="8" x2="20" y2="14"/>
+                            <line x1="23" y1="11" x2="17" y2="11"/>
+                        </svg>
+                        借阅管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="users.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        读者管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reports.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                        数据报表
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                        系统设置
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 顶部栏 -->
+            <header class="top-bar">
+                <h1>借阅管理</h1>
+                <div class="user-info">
+                    <span class="notification">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        <span class="badge">3</span>
+                    </span>
+                    <div class="avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%234A90E2'/%3E%3Ctext x='16' y='22' font-size='14' fill='white' text-anchor='middle'%3E管%3C/text%3E%3C/svg%3E" alt="管理员">
+                    </div>
+                    <span>管理员</span>
+                </div>
+            </header>
+
+            <!-- 统计卡片 -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M5 12h14"/>
+                            <path d="M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-label">今日借出</p>
+                        <p class="stat-value">45</p>
+                        <p class="stat-trend">昨日: 38</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 12H5"/>
+                            <path d="M12 19l-7-7 7-7"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-label">今日归还</p>
+                        <p class="stat-value">32</p>
+                        <p class="stat-trend">昨日: 41</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-label">即将到期</p>
+                        <p class="stat-value">18</p>
+                        <p class="stat-trend">3天内到期</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-label">已逾期</p>
+                        <p class="stat-value">5</p>
+                        <p class="stat-trend negative">需催还</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 操作栏 -->
+            <div class="search-bar">
+                <input type="text" class="form-input search-input" placeholder="搜索读者姓名、借书号...">
+                <button class="btn btn-primary search-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    搜索
+                </button>
+                <button class="btn btn-primary" data-modal="borrowBookModal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    借阅登记
+                </button>
+                <button class="btn btn-secondary" onclick="exportData('borrowing')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    导出
+                </button>
+            </div>
+
+            <!-- 标签页 -->
+            <div class="tabs">
+                <button class="tab active" data-tab="current">当前借阅</button>
+                <button class="tab" data-tab="history">历史记录</button>
+                <button class="tab" data-tab="overdue">逾期记录</button>
+            </div>
+
+            <!-- 借阅记录表格 -->
+            <section class="card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>图书名称</th>
+                                <th>借阅人</th>
+                                <th>借阅日期</th>
+                                <th>应还日期</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="borrowingTableBody">
+                            <tr>
+                                <td colspan="7" style="text-align: center; padding: 40px;">
+                                    <div class="loading"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 分页 -->
+                <div class="pagination">
+                    <button class="pagination-btn">&lt;</button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">&gt;</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 借阅登记模态框 -->
+    <div class="modal-overlay" id="borrowBookModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>借阅登记</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="borrowBookForm">
+                    <div class="form-group">
+                        <label for="readerName">读者姓名 *</label>
+                        <input type="text" id="readerName" name="readerName" class="form-input" placeholder="请输入读者姓名" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="readerCard">读者卡号 *</label>
+                        <input type="text" id="readerCard" name="readerCard" class="form-input" placeholder="请输入读者卡号" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookTitle">图书名称 *</label>
+                        <input type="text" id="bookTitle" name="bookTitle" class="form-input" placeholder="请输入图书名称或扫描ISBN" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="borrowDate">借阅日期</label>
+                            <input type="date" id="borrowDate" name="borrowDate" class="form-input" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="dueDate">应还日期</label>
+                            <input type="date" id="dueDate" name="dueDate" class="form-input" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="remark">备注</label>
+                        <textarea id="remark" name="remark" class="form-input" rows="2" placeholder="可选备注信息"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" onclick="closeModal(document.getElementById('borrowBookModal'))">取消</button>
+                <button class="btn btn-primary" type="button" onclick="document.getElementById('borrowBookForm').dispatchEvent(new Event('submit'))">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 归还确认模态框 -->
+    <div class="modal-overlay" id="returnBookModal">
+        <div class="modal" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3>确认归还</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>确认将此图书标记为已归还吗？</p>
+                <div class="form-group" style="margin-top: 16px;">
+                    <label for="returnCondition">归还状态</label>
+                    <select id="returnCondition" class="form-select">
+                        <option value="good">完好无损</option>
+                        <option value="minor">轻微磨损</option>
+                        <option value="damaged">有损坏</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="returnRemark">备注</label>
+                    <textarea id="returnRemark" class="form-input" rows="2" placeholder="如有损坏请说明"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" onclick="closeModal(document.getElementById('returnBookModal'))">取消</button>
+                <button class="btn btn-primary" type="button" onclick="confirmReturn()">确认归还</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 设置默认日期
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const dueDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+            const borrowDateInput = document.getElementById('borrowDate');
+            const dueDateInput = document.getElementById('dueDate');
+
+            if (borrowDateInput) borrowDateInput.value = today;
+            if (dueDateInput) dueDateInput.value = dueDate;
+        });
+
+        // 归还确认
+        function confirmReturn() {
+            closeModal(document.getElementById('returnBookModal'));
+            showToast('图书归还成功', 'success');
+        }
+    </script>
+</body>
+</html>
